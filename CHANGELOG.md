@@ -1,5 +1,11 @@
 # Changelog
 
+## no version yet
+
+### Changed
+
+* AclComponent::arosBuilder() considers $item->parentNode()
+
 ## v1.3
 
 ### Added
