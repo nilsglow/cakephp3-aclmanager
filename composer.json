@@ -1,14 +1,19 @@
 {
-    "name": "ivanamat/cakephp3-aclmanager",
+    "name": "nilsglow/cakephp3-aclmanager",
     "description": "AclManager plugin for CakePHP 3.x",
     "keywords": ["cakephp", "cakephp3", "cake3", "plugin", "acl", "manager"],
-    "homepage": "https://github.com/ivanamat/cakephp3-aclmanager",
+    "homepage": "https://github.com/nilsglow/cakephp3-aclmanager",
     "type": "cakephp-plugin",
     "license": "MIT",
     "authors": [
         {
             "name": "Ivan Amat",
             "homepage": "http://www.ivanamat.es",
+            "role": "Author"
+        },
+        {
+            "name": "Nils",
+            "homepage": "http://github.com/nilsglow",
             "role": "Author"
         }
     ],
