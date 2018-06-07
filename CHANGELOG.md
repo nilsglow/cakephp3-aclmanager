@@ -1,6 +1,6 @@
 # Changelog
 
-## no version yet
+## 1.3.1
 
 ### Changed
 
