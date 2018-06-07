@@ -81,12 +81,24 @@ class AclManagerComponent extends Component {
             $items = $this->{$model}->find('all');
             foreach($items as $item) {
                 if($i > 0 && isset($models[$i-1])) {
-                    $pk = strtolower(Inflector::singularize($models[$i-1])).'_id';
-                    $parent = $this->Aro->find('all',
-                        ['conditions' => [
-                            'model' => $models[$i-1],
-                            'foreign_key' => $item->{$pk}
-                        ]])->first();
+
+					// we first check parent node from model
+					$node = $item->parentNode();
+					if($node){
+						$parentModel = array_keys($node)[0];
+						$conds = [
+							'model' => $parentModel,
+							'foreign_key' => $node[$parentModel]['id'],
+						];
+					}else{
+						$pk = strtolower(Inflector::singularize($models[$i-1])).'_id';
+						$conds = [
+							'model' => $models[$i-1],
+							'foreign_key' => $item->{$pk}
+						];
+					}
+
+                    $parent = $this->Aro->find('all', ['conditions' => $conds])->first();
                 }
                 
                 // Prepare alias
